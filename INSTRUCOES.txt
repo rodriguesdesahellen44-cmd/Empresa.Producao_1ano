@@ -1,0 +1,106 @@
+# INSTRUÇÕES RÁPIDAS - NEXUS INFINITY
+
+## O que foi criado?
+
+Sua aplicação está **100% pronta** com:
+
+✓ **app.py** - Código Python com Flask  
+✓ **templates/empresa.html** - Página web com 8 seções  
+✓ **static/style.css** - Estilos profissionais  
+✓ **requirements.txt** - Dependências  
+✓ **run.sh** - Script para executar facilmente  
+✓ **README.md** - Documentação completa  
+
+---
+
+## COMO RODAR NO VS CODE?
+
+### Opção 1: Terminal do VS Code (Recomendado)
+
+1. Abra o **Terminal Integrado** do VS Code (Ctrl + `)
+2. Digite:
+```bash
+cd /home/hellen/Desktop/Nexus.Infinity
+python3 app.py
+```
+3. A janela com a apresentação da empresa **abrirá automaticamente** 
+
+---
+
+### Opção 2: Usando o script de execução
+
+1. No terminal do VS Code:
+```bash
+cd /home/hellen/Desktop/Nexus.Infinity
+./run.sh
+```
+
+---
+
+##  DADOS INCLUSOS NA PÁGINA
+
+**Empresa:** Nexus Infinity  
+**Setor:** Produção  
+**Entrevistadoras:** Hellen Rodrigues e Emilly Vargas  
+**Gerente:** Rebeca  
+**Subgerente:** Ellen  
+**Dono:** Thomas  
+
+---
+
+##  AS 8 SEÇÕES DA APRESENTAÇÃO
+
+1. **Apresentação da Empresa** - Info sobre Nexus Infinity
+2. **Apresentação da Equipe** - Nomes das entrevistadoras e setor
+3. **Função do Setor** - Por que existe, como ajuda, etc
+4. **Atividades Principais** - 5 atividades do setor de produção
+5. **Análise da Empresa** - Como está funcionando
+6. **Propostas de Melhoria** - Sugestões para otimizar
+7. **Histórico da Análise** - Tabela de análises realizadas
+8. **Conclusão** - Resumo final dos aprendizados
+
+---
+
+##  PERSONALIZAÇÕES
+
+Para **mudar informações na página**, edite o arquivo `app.py`:
+
+Procure por `DADOS_NEXUS = {` e modifique os valores desejados.
+
+As mudanças aparecerão automaticamente quando você recarregar a página!
+
+---
+
+##  REQUISITOS DO SISTEMA
+
+- ✅ Python 3.8+ (você já tem: Python 3.12.3)
+- ✅ pip (gerenciador de pacotes)
+- ✅ Flask e PyWebView (instalará automaticamente)
+
+---
+
+##  INSTALAÇÃO DE DEPENDÊNCIAS
+
+Se encontrar erro, instale manualmente:
+
+```bash
+pip install Flask==2.3.2 pywebview==5.0.4
+```
+
+Ou com pip3:
+
+```bash
+pip3 install Flask==2.3.2 pywebview==5.0.4
+```
+
+---
+
+##  DÚVIDAS?
+
+- Consulte o **README.md** para documentação completa
+- Verifique se Python 3 e pip estão instalados
+- Certifique-se de estar na pasta `/home/hellen/Desktop/Nexus.Infinity/`
+
+---
+
+**Tudo pronto! Aproveite sua apresentação! **
