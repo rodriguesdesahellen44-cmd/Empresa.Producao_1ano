@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Infinity - Apresentação da Empresa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- CABEÇALHO -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📦 {{ dados.apresentacao.nome }}</h1>
+            <p class="header-subtitle">Setor Analisado: {{ dados.apresentacao.setor }}</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- SEÇÃO 1: APRESENTAÇÃO DA EMPRESA -->
+        <section class="secao" id="apresentacao">
+            <h2>1. Apresentação da Empresa Analisada</h2>
+            <div class="card">
+                <p><strong>Nome da Empresa:</strong> {{ dados.apresentacao.nome }}</p>
+                <p><strong>Proprietário:</strong> {{ dados.apresentacao.dono }}</p>
+                <p><strong>Área de Atuação:</strong> {{ dados.apresentacao.area_atuacao }}</p>
+                <p><strong>Público-Alvo:</strong> {{ dados.apresentacao.publico_alvo }}</p>
+                
+                <h3>Produto ou Serviço Principal:</h3>
+                <p class="texto-destacado">{{ dados.apresentacao.produto_principal }}</p>
+                
+                <h3>Descrição da Empresa:</h3>
+                <p>{{ dados.apresentacao.descricao }}</p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: APRESENTAÇÃO DA EQUIPE -->
+        <section class="secao" id="equipe">
+            <h2>2. Apresentação da Equipe</h2>
+            <div class="card">
+                <div class="info-box">
+                    <div class="info-item">
+                        <strong>Entrevistadoras:</strong>
+                        <ul>
+                            {% for entrevistadora in dados.equipe.entrevistadoras %}
+                            <li>{{ entrevistadora }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    
+                    <div class="info-item">
+                        <strong>Gerente do Setor:</strong>
+                        <p>{{ dados.apresentacao.gerente }}</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <strong>Subgerente do Setor:</strong>
+                        <p>{{ dados.apresentacao.subgerente }}</p>
+                    </div>
+                </div>
+
+                <h3>Setor Analisado:</h3>
+                <p class="texto-destacado">{{ dados.apresentacao.setor }}</p>
+
+                <h3>Função Geral do Setor:</h3>
+                <p>{{ dados.equipe.funcao_geral }}</p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3: FUNÇÃO DO SETOR DENTRO DA EMPRESA -->
+        <section class="secao" id="funcao_setor">
+            <h2>3. Função do Setor Dentro da Empresa</h2>
+            <div class="card">
+                <div class="funcao-item">
+                    <h4>❓ Para que esse setor existe?</h4>
+                    <p>{{ dados.funcao_setor.existencia }}</p>
+                </div>
+
+                <div class="funcao-item">
+                    <h4>🤝 Como ele ajuda a empresa?</h4>
+                    <p>{{ dados.funcao_setor.ajuda }}</p>
+                </div>
+
+                <div class="funcao-item">
+                    <h4>⚠️ O que aconteceria se não funcionasse bem?</h4>
+                    <p>{{ dados.funcao_setor.se_nao_funcionasse }}</p>
+                </div>
+
+                <div class="funcao-item">
+                    <h4>✅ Que problemas ele ajuda a resolver?</h4>
+                    <p>{{ dados.funcao_setor.problemas_resolvidos }}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 4: PRINCIPAIS ATIVIDADES -->
+        <section class="secao" id="atividades">
+            <h2>4. Principais Atividades do Setor</h2>
+            <div class="card">
+                <ul class="atividades-list">
+                    {% for atividade in dados.atividades %}
+                    <li>{{ atividade }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 5: ANÁLISE DA EMPRESA -->
+        <section class="secao" id="analise">
+            <h2>5. Análise da Empresa</h2>
+            <div class="card">
+                <h3>Organização do Setor:</h3>
+                <p>{{ dados.analise.organizacao }}</p>
+
+                <h3>O que funciona bem:</h3>
+                <p class="texto-sucesso">✓ {{ dados.analise.funciona_bem }}</p>
+
+                <h3>O que pode melhorar:</h3>
+                <p class="texto-atencao">⚠️ {{ dados.analise.pode_melhorar }}</p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 6: PROPOSTAS DE MELHORIA -->
+        <section class="secao" id="melhorias">
+            <h2>6. Propostas de Melhoria</h2>
+            <div class="card">
+                <ul class="melhorias-list">
+                    {% for melhoria in dados.melhorias %}
+                    <li>📋 {{ melhoria }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 7: HISTÓRICO DA ANÁLISE -->
+        <section class="secao" id="historico">
+            <h2>7. Histórico da Análise</h2>
+            <div class="table-container">
+                <table class="historico-table">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Setor</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in dados.historico %}
+                        <tr>
+                            <td>{{ item.data }}</td>
+                            <td><strong>{{ item.setor }}</strong></td>
+                            <td>{{ item.descricao }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 8: CONCLUSÃO -->
+        <section class="secao" id="conclusao">
+            <h2>8. Conclusão da Equipe</h2>
+            <div class="card conclusao-card">
+                <p>{{ dados.conclusao }}</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <p>Projeto de Análise de Empresas | Setor de Produção | Nexus Infinity</p>
+        <p>Entrevistadoras: {{ dados.equipe.entrevistadoras|join(', ') }}</p>
+    </footer>
+</body>
+</html>
